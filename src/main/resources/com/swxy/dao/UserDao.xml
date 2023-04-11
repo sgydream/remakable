@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.swxy.dao.UserDao">
+    <select id="login" resultType="com.swxy.pojo.User">
+        select * from zyue.user where userId=#{userId} and password=#{password}
+    </select>
+    <select id="getUserByUserName" resultType="com.swxy.pojo.User">
+        select * from zyue.user where userId=#{userId}
+    </select>
+    <insert id="addUser" parameterType="com.swxy.pojo.User">
+        insert into zyue.user (userId,userName,password,phone) values(#{userId},#{userName},#{password},#{password})
+    </insert>
+</mapper>
